@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About Me</a>
+            <a href="education.html">Education</a>
+            <a href="experience.html">Experience</a>
+            <a href="contact.html">Contact Info</a>
+        </nav>
+    </header>
+
+    <main class="content">
+        <h1>About Me</h1>
+        <p>Here you can share a brief biography, your background, and your interests.</p>
+    </main>
+</body>
+</html>
