@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education</title>
+    <title>Education - Charles Trejo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,8 +18,22 @@
     </header>
 
     <main class="content">
-        <h1>Education</h1>
-        <p>Detail your academic background, degrees, certifications, and schools attended here.</p>
+        <h1>Education & Training</h1>
+        
+        <div style="text-align: left; margin-bottom: 20px;">
+            <h3>Ivy Tech Community College</h3>
+            <p><strong>Associate of Applied Science (Informatics)</strong> | Jan 2024 - Aug 2026[cite: 1]</p>
+            <p><strong>GPA:</strong> 3.8[cite: 1]</p>
+            <p><strong>Relevant Coursework:</strong> IP Networking, IT Support, and Computer Science[cite: 1]</p>
+        </div>
+
+        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #ddd;">
+
+        <div style="text-align: left;">
+            <h3>Satellite Communications Course</h3>
+            <p><strong>U.S. Army</strong> | Sep 2017 - May 2018[cite: 1]</p>
+            <p>Highly skilled in satellite communications with specialized training from the U.S. Army, encompassing computer networking, digital communications circuits, and communications systems maintenance[cite: 1]. Adept at managing and maintaining advanced communication systems, ensuring reliable and secure data transmission in diverse and high-pressure environments[cite: 1].</p>
+        </div>
     </main>
 </body>
 </html>
