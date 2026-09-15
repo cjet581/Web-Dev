@@ -10,7 +10,7 @@ body {
 /* Top Tactical Navbar */
 header {
     background-color: #0b0d0f;
-    border-bottom: 2px solid #d97706; /* Amber warning accent */
+    border-bottom: 2px solid #d97706;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -44,7 +44,7 @@ header {
 
 .navbar a.active {
     color: #000000;
-    background-color: #d97706; /* Amber highlight */
+    background-color: #d97706;
 }
 
 /* Main Content Containers */
