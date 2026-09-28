@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Charles Trejo</title>
+    <title>Contact Info - Charles Trejo</title>
     <link rel="stylesheet" href="nav.css">
     <style>
         header .navbar {
@@ -52,6 +52,61 @@
             padding: 0.75rem 1.25rem;
             letter-spacing: 1px;
         }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 25px auto 0 auto;
+            text-align: left;
+        }
+        .contact-form label {
+            font-size: 14px;
+            color: #8b949e;
+            text-transform: uppercase;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            background-color: #21262d;
+            border: 1px solid #30363d;
+            color: #c9d1d9;
+            padding: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #58a6ff;
+        }
+        .contact-form button {
+            background-color: #d97706;
+            color: #000000;
+            border: none;
+            padding: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            transition: opacity 0.2s;
+        }
+        .contact-form button:hover {
+            opacity: 0.9;
+        }
+        #form-acknowledgement {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #3fb950;
+            display: none;
+        }
+        #form-error {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #f85149;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -59,7 +114,7 @@
         <nav class="navbar">
             <div class="nav-links-left">
                 <a href="index.html">Home</a>
-                <a href="about.html" class="active">About Me</a>
+                <a href="about.html">About Me</a>
             </div>
             
             <a href="index.html" class="nav-logo-link">
@@ -69,52 +124,97 @@
             <div class="nav-links-right">
                 <a href="education.html">Education</a>
                 <a href="experience.html">Experience</a>
-                <a href="contact.html">Contact Info</a>
+                <a href="contact.html" class="active">Contact Info</a>
             </div>
         </nav>
     </header>
 
     <main class="page-container">
-        <div class="panel">
-            <h1>Behind the Screen</h1>
-            <p>Detail-oriented IT professional and U.S. Army veteran specializing in system operations, infrastructure hardening, and high-stakes compliance management. Besides my professional fondness of computers and providing safe and secure networks. I enjoy a myriad of other fun activities such as games, backpacking, reading, and overall just having a fun time. I spend most weekends either working on my house or playing with my dog.</p>
-            
-            <!-- Graduation Insight Image -->
-            <div style="margin-top: 30px; text-align: center;">
-                <img src="mcgrad.png" alt="Charles Trejo in Marine Corps uniform with his father" style="max-width: 100%; height: auto; border: 2px solid #30363d; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
-                <p style="font-size: 0.9em; color: #8b949e; margin-top: 10px;"><em>Celebrating my U.S. Marine Corps graduation.</em></p>
+        <div class="panel" style="text-align: center;">
+            <h1>Contact Information</h1>
+            <p>Establish direct communication for professional opportunities and technical coordination[cite: 2].</p>
+            <p>(That's me!)[cite: 2]</p>
+            <!-- Added Image Display -->
+            <div style="margin: 20px 0;">
+                <img src="childhood-phone.jpg" alt="Charles Trejo on phone" style="max-width: 250px; border: 2px solid #30363d; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
             </div>
 
-            <!-- Personal Insight Image -->
-            <div style="margin-top: 30px; text-align: center;">
-                <img src="camp.png" alt="Charles Trejo camping by a campfire" style="max-width: 100%; height: auto; border: 2px solid #30363d; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
-                <p style="font-size: 0.9em; color: #8b949e; margin-top: 10px;"><em>Best way to unplug after a long week!</em></p>
+            <div style="margin-top: 25px; text-align: left; display: inline-block;">
+                <p><strong>Phone:</strong> <a href="tel:7653432661" style="color: #58a6ff;">(765) 343-2661</a>[cite: 2]</p>
+                <p><strong>Email:</strong> <a href="mailto:charles.trejo581@gmail.com" style="color: #58a6ff;">charles.trejo581@gmail.com</a>[cite: 2]</p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/charlestrejo581" target="_blank" style="color: #58a6ff;">linkedin.com/in/charlestrejo581</a>[cite: 2]</p>
+                <p><strong>Security Clearance:</strong> Active TS/SCI[cite: 2]</p>
+            </div>
+
+            <!-- Contact Sheet Form -->
+            <div style="margin-top: 40px; border-top: 1px dashed #30363d; padding-top: 30px;">
+                <h2 style="font-size: 20px; color: #f0f6fc;">Send a Message</h2>
+                <form id="contactForm" class="contact-form">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+                    <label for="email">Your Email</label>
+                    <input type="text" id="email" name="email" required placeholder="Enter your email (must include @)">
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="Type your message here..."></textarea>
+
+                    <button type="submit">Submit Message</button>
+                    <div id="form-acknowledgement">Thank you! Your message has been received.</div>
+                    <div id="form-error">Please enter a valid email address containing an '@' sign.</div>
+                </form>
             </div>
         </div>
     </main>
+
     <script>
-    let lastScrollTop = 0;
-    const header = document.querySelector('header');
-    const scrollThreshold = 50;
+        // Scroll-to-hide header logic
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
+        const scrollThreshold = 50;
 
-    window.addEventListener('scroll', function() {
-        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        window.addEventListener('scroll', function() {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-        if (currentScroll <= 0) {
-            header.classList.remove('nav-hidden');
-            return;
-        }
+            if (currentScroll <= 0) {
+                header.classList.remove('nav-hidden');
+                return;
+            }
 
-        if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
-            header.classList.add('nav-hidden');
-        } else if (currentScroll < lastScrollTop) {
-            header.classList.remove('nav-hidden');
-        }
+            if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+                header.classList.add('nav-hidden');
+            } else if (currentScroll < lastScrollTop) {
+                header.classList.remove('nav-hidden');
+            }
 
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-    }, false);
-</script>
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        }, false);
 
+        // Contact form validation and acknowledgement
+        const contactForm = document.getElementById('contactForm');
+        const emailInput = document.getElementById('email');
+        const ackDiv = document.getElementById('form-acknowledgement');
+        const errDiv = document.getElementById('form-error');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Clear previous states
+            ackDiv.style.display = 'none';
+            errDiv.style.display = 'none';
+
+            const emailValue = emailInput.value;
+
+            // Check if email contains '@'
+            if (!emailValue.includes('@')) {
+                errDiv.style.display = 'block';
+                return;
+            }
+
+            // Success state
+            ackDiv.style.display = 'block';
+            contactForm.reset();
+        });
+    </script>
 </body>
 </html>
-
