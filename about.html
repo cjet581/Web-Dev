@@ -94,3 +94,26 @@
     </main>
 </body>
 </html>
+
+<script>
+    let lastScrollTop = 0;
+    const header = document.querySelector('header');
+    const scrollThreshold = 50;
+
+    window.addEventListener('scroll', function() {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScroll <= 0) {
+            header.classList.remove('nav-hidden');
+            return;
+        }
+
+        if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+            header.classList.add('nav-hidden');
+        } else if (currentScroll < lastScrollTop) {
+            header.classList.remove('nav-hidden');
+        }
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    }, false);
+</script>
