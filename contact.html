@@ -134,6 +134,7 @@
             <h1>Contact Information</h1>
             <p>Establish direct communication for professional opportunities and technical coordination.</p>
             <p>(That's me!)</p>
+            
             <!-- Added Image Display -->
             <div style="margin: 20px 0;">
                 <img src="childhood-phone.jpg" alt="Charles Trejo on phone" style="max-width: 250px; border: 2px solid #30363d; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
@@ -146,15 +147,19 @@
                 <p><strong>Security Clearance:</strong> Active TS/SCI</p>
             </div>
 
-            <!-- Contact Sheet Form -->
+            <!-- Contact Sheet Form with Web3Forms Integration -->
             <div style="margin-top: 40px; border-top: 1px dashed #30363d; padding-top: 30px;">
                 <h2 style="font-size: 20px; color: #f0f6fc;">Send a Message</h2>
-                <form id="contactForm" class="contact-form">
+                <form action="https://api.web3forms.com/submit" method="POST" id="contactForm" class="contact-form">
+                    
+                    <!-- Web3Forms Access Key -->
+                    <input type="hidden" name="access_key" value="bb314316-bf87-4b2d-bc19-a33788df075c">
+
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" required placeholder="Enter your name">
 
                     <label for="email">Your Email</label>
-                    <input type="text" id="email" name="email" required placeholder="Enter your email">
+                    <input type="text" id="email" name="email" required placeholder="Enter your email (must include @)">
 
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="4" required placeholder="Type your message here..."></textarea>
@@ -190,30 +195,26 @@
             lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
         }, false);
 
-        // Contact form validation and acknowledgement
+        // Contact form validation and submission handling
         const contactForm = document.getElementById('contactForm');
         const emailInput = document.getElementById('email');
         const ackDiv = document.getElementById('form-acknowledgement');
         const errDiv = document.getElementById('form-error');
 
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Clear previous states
-            ackDiv.style.display = 'none';
-            errDiv.style.display = 'none';
-
             const emailValue = emailInput.value;
 
             // Check if email contains '@'
             if (!emailValue.includes('@')) {
+                e.preventDefault(); // Stop submission
+                ackDiv.style.display = 'none';
                 errDiv.style.display = 'block';
                 return;
             }
 
-            // Success state
+            // If valid, let Web3Forms handle the post while showing the acknowledgement
+            errDiv.style.display = 'none';
             ackDiv.style.display = 'block';
-            contactForm.reset();
         });
     </script>
 </body>
