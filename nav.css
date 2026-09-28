@@ -157,3 +157,33 @@ ul {
     border-bottom: none;
     padding-bottom: 0;
 }
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    header .navbar {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 15px;
+    }
+
+    .nav-links-left, 
+    .nav-links-right {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .navbar a:not(.nav-logo-link) {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .nav-logo-img {
+        height: 70px;
+        width: 70px;
+    }
+}
