@@ -5,15 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Info - Charles Trejo</title>
     <link rel="stylesheet" href="nav.css">
+    <style>
+        header .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 1.5rem 2rem;
+            border-bottom: none;
+        }
+        header {
+            border-bottom: none;
+        }
+        .nav-logo-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            background: none;
+            border: none;
+            text-decoration: none;
+        }
+        .nav-logo-img {
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #30363d;
+        }
+        .nav-links-left, .nav-links-right {
+            display: flex;
+            gap: 2rem;
+            flex: 1;
+            align-items: center;
+        }
+        .nav-links-left {
+            justify-content: flex-end;
+            margin-right: 3rem;
+        }
+        .nav-links-right {
+            justify-content: flex-start;
+            margin-left: 3rem;
+        }
+        .navbar a:not(.nav-logo-link) {
+            font-size: 1.1rem;
+            padding: 0.75rem 1.25rem;
+            letter-spacing: 1px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Me</a>
-            <a href="education.html">Education</a>
-            <a href="experience.html">Experience</a>
-            <a href="contact.html" class="active">Contact Info</a>
+            <div class="nav-links-left">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Me</a>
+            </div>
+            
+            <a href="index.html" class="nav-logo-link">
+                <img src="logo.png" alt="Logo" class="nav-logo-img">
+            </a>
+            
+            <div class="nav-links-right">
+                <a href="education.html">Education</a>
+                <a href="experience.html">Experience</a>
+                <a href="contact.html" class="active">Contact Info</a>
+            </div>
         </nav>
     </header>
 
