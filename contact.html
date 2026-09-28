@@ -159,7 +159,7 @@
                     <input type="text" id="name" name="name" required placeholder="Enter your name">
 
                     <label for="email">Your Email</label>
-                    <input type="text" id="email" name="email" required placeholder="Enter your email">
+                    <input type="text" id="email" name="email" required placeholder="Enter your email (must include @)">
 
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="4" required placeholder="Type your message here..."></textarea>
@@ -212,9 +212,14 @@
                 return;
             }
 
-            // If valid, let Web3Forms handle the post while showing the acknowledgement
+            // Valid email: Hide error, show acknowledgment
             errDiv.style.display = 'none';
             ackDiv.style.display = 'block';
+
+            // Clear the form fields shortly after submission begins
+            setTimeout(function() {
+                contactForm.reset();
+            }, 100);
         });
     </script>
 </body>
